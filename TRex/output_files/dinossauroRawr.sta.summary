@@ -1,0 +1,165 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'video_PLL|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : -10.105
+TNS   : -10.105
+
+Type  : Slow 1100mV 85C Model Setup 'contador:contaQueEuGosto|vetor[16]'
+Slack : -8.044
+TNS   : -133.158
+
+Type  : Slow 1100mV 85C Model Setup 'CLOCK_50'
+Slack : -4.768
+TNS   : -4.768
+
+Type  : Slow 1100mV 85C Model Hold 'video_PLL|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.359
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'CLOCK_50'
+Slack : 0.379
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'contador:contaQueEuGosto|vetor[16]'
+Slack : 0.716
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'contador:contaQueEuGosto|vetor[16]'
+Slack : -0.394
+TNS   : -29.191
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'video_PLL|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]'
+Slack : 1.666
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : 8.970
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'video_PLL|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : 19.306
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'video_PLL|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : -10.228
+TNS   : -10.228
+
+Type  : Slow 1100mV 0C Model Setup 'contador:contaQueEuGosto|vetor[16]'
+Slack : -8.415
+TNS   : -130.012
+
+Type  : Slow 1100mV 0C Model Setup 'CLOCK_50'
+Slack : -4.659
+TNS   : -4.659
+
+Type  : Slow 1100mV 0C Model Hold 'video_PLL|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.362
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'CLOCK_50'
+Slack : 0.378
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'contador:contaQueEuGosto|vetor[16]'
+Slack : 0.716
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'contador:contaQueEuGosto|vetor[16]'
+Slack : -0.394
+TNS   : -29.086
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'video_PLL|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]'
+Slack : 1.666
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : 9.000
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'video_PLL|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : 19.259
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'video_PLL|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : -5.099
+TNS   : -5.099
+
+Type  : Fast 1100mV 85C Model Setup 'contador:contaQueEuGosto|vetor[16]'
+Slack : -3.679
+TNS   : -67.077
+
+Type  : Fast 1100mV 85C Model Setup 'CLOCK_50'
+Slack : -3.471
+TNS   : -3.471
+
+Type  : Fast 1100mV 85C Model Hold 'video_PLL|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.187
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'CLOCK_50'
+Slack : 0.189
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'contador:contaQueEuGosto|vetor[16]'
+Slack : 0.353
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'contador:contaQueEuGosto|vetor[16]'
+Slack : -0.050
+TNS   : -1.169
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'video_PLL|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]'
+Slack : 1.666
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : 9.003
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'video_PLL|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : 19.556
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'video_PLL|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : -4.656
+TNS   : -4.656
+
+Type  : Fast 1100mV 0C Model Setup 'contador:contaQueEuGosto|vetor[16]'
+Slack : -3.500
+TNS   : -58.080
+
+Type  : Fast 1100mV 0C Model Setup 'CLOCK_50'
+Slack : -2.935
+TNS   : -2.935
+
+Type  : Fast 1100mV 0C Model Hold 'video_PLL|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.114
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'CLOCK_50'
+Slack : 0.179
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'contador:contaQueEuGosto|vetor[16]'
+Slack : 0.302
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'contador:contaQueEuGosto|vetor[16]'
+Slack : -0.011
+TNS   : -0.121
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'video_PLL|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]'
+Slack : 1.666
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : 9.042
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'video_PLL|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : 19.544
+TNS   : 0.000
+
+------------------------------------------------------------

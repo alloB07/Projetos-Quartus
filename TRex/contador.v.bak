@@ -1,0 +1,14 @@
+module contador(
+	input clk,
+	
+	output cont
+);
+
+	reg [17:0] vetor;
+	assign cont = vetor[17];
+
+	always@(posedge clk) begin
+		vetor = vetor + 1;
+	end
+
+endmodule

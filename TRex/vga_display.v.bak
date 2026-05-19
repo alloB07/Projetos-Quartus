@@ -1,0 +1,18 @@
+module vga_diplay (
+	input clk,
+	input [9:0] hcounter,
+	input [9:0] vcounter,
+	input [9:0] cacto,
+	input topo,
+	input batebate,
+	
+	output reg red,
+	output reg green,
+	output reg blue
+);
+
+	always@(posedge clk) begin
+		
+	end
+
+endmodule

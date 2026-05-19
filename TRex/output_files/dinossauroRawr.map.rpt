@@ -1,0 +1,1515 @@
+Analysis & Synthesis report for dinossauroRawr
+Tue Dec 16 15:08:59 2025
+Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: VGA_SYNC:video_PLL|video_PLL:video_PLL_inst|altpll:altpll_component
+ 14. Parameter Settings for User Entity Instance: vga_display:niceGraphics
+ 15. Parameter Settings for Inferred Entity Instance: vga_display:niceGraphics|lpm_divide:Div0
+ 16. Parameter Settings for Inferred Entity Instance: vga_display:niceGraphics|lpm_divide:Mod0
+ 17. altpll Parameter Settings by Entity Instance
+ 18. Post-Synthesis Netlist Statistics for Top Partition
+ 19. Elapsed Time Per Partition
+ 20. Analysis & Synthesis Messages
+ 21. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2024  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++---------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Tue Dec 16 15:08:59 2025          ;
+; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
+; Revision Name                   ; dinossauroRawr                                 ;
+; Top-level Entity Name           ; dinossauroRawr                                 ;
+; Family                          ; Cyclone V                                      ;
+; Logic utilization (in ALMs)     ; N/A                                            ;
+; Total registers                 ; 126                                            ;
+; Total pins                      ; 9                                              ;
+; Total virtual pins              ; 0                                              ;
+; Total block memory bits         ; 0                                              ;
+; Total DSP Blocks                ; 0                                              ;
+; Total HSSI RX PCSs              ; 0                                              ;
+; Total HSSI PMA RX Deserializers ; 0                                              ;
+; Total HSSI TX PCSs              ; 0                                              ;
+; Total HSSI PMA TX Serializers   ; 0                                              ;
+; Total PLLs                      ; 1                                              ;
+; Total DLLs                      ; 0                                              ;
++---------------------------------+------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSXFC6D6F31C6     ;                    ;
+; Top-level entity name                                                           ; dinossauroRawr     ; dinossauroRawr     ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 12          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-12        ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                       ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                             ; Library ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------+---------+
+; dinossauroRawr.bdf               ; yes             ; User Block Diagram/Schematic File  ; C:/Users/847034/Desktop/SD/trex/dinossauroRawr.bdf                       ;         ;
+; vga_display.v                    ; yes             ; User Verilog HDL File              ; C:/Users/847034/Desktop/SD/trex/vga_display.v                            ;         ;
+; vga_sync.vhd                     ; yes             ; Auto-Found VHDL File               ; C:/Users/847034/Desktop/SD/trex/vga_sync.vhd                             ;         ;
+; video_pll.vhd                    ; yes             ; Auto-Found Wizard-Generated File   ; C:/Users/847034/Desktop/SD/trex/video_pll.vhd                            ;         ;
+; altpll.tdf                       ; yes             ; Megafunction                       ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/altpll.tdf          ;         ;
+; aglobal231.inc                   ; yes             ; Megafunction                       ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/aglobal231.inc      ;         ;
+; stratix_pll.inc                  ; yes             ; Megafunction                       ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/stratix_pll.inc     ;         ;
+; stratixii_pll.inc                ; yes             ; Megafunction                       ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/stratixii_pll.inc   ;         ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                       ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/cycloneii_pll.inc   ;         ;
+; db/altpll_80u.tdf                ; yes             ; Auto-Generated Megafunction        ; C:/Users/847034/Desktop/SD/trex/db/altpll_80u.tdf                        ;         ;
+; dinorunner.v                     ; yes             ; Auto-Found Verilog HDL File        ; C:/Users/847034/Desktop/SD/trex/dinorunner.v                             ;         ;
+; contador.v                       ; yes             ; Auto-Found Verilog HDL File        ; C:/Users/847034/Desktop/SD/trex/contador.v                               ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                       ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                       ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                       ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; db/lpm_divide_4am.tdf            ; yes             ; Auto-Generated Megafunction        ; C:/Users/847034/Desktop/SD/trex/db/lpm_divide_4am.tdf                    ;         ;
+; db/sign_div_unsign_akh.tdf       ; yes             ; Auto-Generated Megafunction        ; C:/Users/847034/Desktop/SD/trex/db/sign_div_unsign_akh.tdf               ;         ;
+; db/alt_u_div_qse.tdf             ; yes             ; Auto-Generated Megafunction        ; C:/Users/847034/Desktop/SD/trex/db/alt_u_div_qse.tdf                     ;         ;
+; db/lpm_divide_72m.tdf            ; yes             ; Auto-Generated Megafunction        ; C:/Users/847034/Desktop/SD/trex/db/lpm_divide_72m.tdf                    ;         ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                      ;
++---------------------------------------------+------------------------------------+
+; Resource                                    ; Usage                              ;
++---------------------------------------------+------------------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 329                                ;
+;                                             ;                                    ;
+; Combinational ALUT usage for logic          ; 507                                ;
+;     -- 7 input functions                    ; 8                                  ;
+;     -- 6 input functions                    ; 140                                ;
+;     -- 5 input functions                    ; 70                                 ;
+;     -- 4 input functions                    ; 24                                 ;
+;     -- <=3 input functions                  ; 265                                ;
+;                                             ;                                    ;
+; Dedicated logic registers                   ; 126                                ;
+;                                             ;                                    ;
+; I/O pins                                    ; 9                                  ;
+;                                             ;                                    ;
+; Total DSP Blocks                            ; 0                                  ;
+;                                             ;                                    ;
+; Total PLLs                                  ; 1                                  ;
+;     -- PLLs                                 ; 1                                  ;
+;                                             ;                                    ;
+; Maximum fan-out node                        ; VGA_SYNC:video_PLL|pixel_column[2] ;
+; Maximum fan-out                             ; 101                                ;
+; Total fan-out                               ; 2347                               ;
+; Average fan-out                             ; 3.60                               ;
++---------------------------------------------+------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                      ; Entity Name         ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |dinossauroRawr                           ; 507 (0)             ; 126 (0)                   ; 0                 ; 0          ; 9    ; 0            ; |dinossauroRawr                                                                                                                          ; dinossauroRawr      ; work         ;
+;    |VGA_SYNC:video_PLL|                   ; 39 (39)             ; 48 (48)                   ; 0                 ; 0          ; 0    ; 0            ; |dinossauroRawr|VGA_SYNC:video_PLL                                                                                                       ; VGA_SYNC            ; work         ;
+;       |video_PLL:video_PLL_inst|          ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |dinossauroRawr|VGA_SYNC:video_PLL|video_PLL:video_PLL_inst                                                                              ; video_PLL           ; work         ;
+;          |altpll:altpll_component|        ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |dinossauroRawr|VGA_SYNC:video_PLL|video_PLL:video_PLL_inst|altpll:altpll_component                                                      ; altpll              ; work         ;
+;             |altpll_80u:auto_generated|   ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |dinossauroRawr|VGA_SYNC:video_PLL|video_PLL:video_PLL_inst|altpll:altpll_component|altpll_80u:auto_generated                            ; altpll_80u          ; work         ;
+;    |contador:contaQueEuGosto|             ; 17 (17)             ; 17 (17)                   ; 0                 ; 0          ; 0    ; 0            ; |dinossauroRawr|contador:contaQueEuGosto                                                                                                 ; contador            ; work         ;
+;    |dinoRunner:jogoInsano|                ; 79 (79)             ; 38 (38)                   ; 0                 ; 0          ; 0    ; 0            ; |dinossauroRawr|dinoRunner:jogoInsano                                                                                                    ; dinoRunner          ; work         ;
+;    |vga_display:niceGraphics|             ; 372 (289)           ; 23 (23)                   ; 0                 ; 0          ; 0    ; 0            ; |dinossauroRawr|vga_display:niceGraphics                                                                                                 ; vga_display         ; work         ;
+;       |lpm_divide:Div0|                   ; 38 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |dinossauroRawr|vga_display:niceGraphics|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_4am:auto_generated|  ; 38 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |dinossauroRawr|vga_display:niceGraphics|lpm_divide:Div0|lpm_divide_4am:auto_generated                                                   ; lpm_divide_4am      ; work         ;
+;             |sign_div_unsign_akh:divider| ; 38 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |dinossauroRawr|vga_display:niceGraphics|lpm_divide:Div0|lpm_divide_4am:auto_generated|sign_div_unsign_akh:divider                       ; sign_div_unsign_akh ; work         ;
+;                |alt_u_div_qse:divider|    ; 38 (38)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |dinossauroRawr|vga_display:niceGraphics|lpm_divide:Div0|lpm_divide_4am:auto_generated|sign_div_unsign_akh:divider|alt_u_div_qse:divider ; alt_u_div_qse       ; work         ;
+;       |lpm_divide:Mod0|                   ; 45 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |dinossauroRawr|vga_display:niceGraphics|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_72m:auto_generated|  ; 45 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |dinossauroRawr|vga_display:niceGraphics|lpm_divide:Mod0|lpm_divide_72m:auto_generated                                                   ; lpm_divide_72m      ; work         ;
+;             |sign_div_unsign_akh:divider| ; 45 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |dinossauroRawr|vga_display:niceGraphics|lpm_divide:Mod0|lpm_divide_72m:auto_generated|sign_div_unsign_akh:divider                       ; sign_div_unsign_akh ; work         ;
+;                |alt_u_div_qse:divider|    ; 45 (45)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |dinossauroRawr|vga_display:niceGraphics|lpm_divide:Mod0|lpm_divide_72m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_qse:divider ; alt_u_div_qse       ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; dinoRunner:jogoInsano|colisao                      ; GND                 ; yes                    ;
+; Number of user-specified and inferred latches = 1  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-----------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                      ;
++-----------------------------------------+-----------------------------------------------+
+; Register name                           ; Reason for Removal                            ;
++-----------------------------------------+-----------------------------------------------+
+; vga_display:niceGraphics|green          ; Merged with vga_display:niceGraphics|blue     ;
+; vga_display:niceGraphics|red            ; Merged with vga_display:niceGraphics|blue     ;
+; VGA_SYNC:video_PLL|pixel_row[9]         ; Stuck at GND due to stuck port data_in        ;
+; vga_display:niceGraphics|dino0~0        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~1        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~2        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~3        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~4        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~5        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~6        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~7        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~8        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~9        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~10       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~11       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~12       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~13       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~14       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~15       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~16       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~17       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~18       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~19       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~20       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~21       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~22       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~23       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~24       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~25       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~26       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~27       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~28       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~29       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~30       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~31       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~32       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~33       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~34       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~35       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~36       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~37       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~38       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~39       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~40       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~41       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~42       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~43       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~44       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~45       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~46       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~47       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~48       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~49       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~50       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~51       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~52       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~53       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~54       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~55       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~56       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~57       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~58       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~59       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~60       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~61       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~62       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~63       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~64       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~65       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~66       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~67       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~68       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~69       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~70       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~71       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~72       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~73       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~74       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~75       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~76       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~77       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~78       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~79       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~80       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~81       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~82       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~83       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~84       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~85       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~86       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~87       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~88       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~89       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~90       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~91       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~92       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~93       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~94       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~95       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~96       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~97       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~98       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~99       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~100      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~101      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~102      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~103      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~104      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~105      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~106      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~107      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~108      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~109      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~110      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~111      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~112      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~113      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~114      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~115      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~116      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~117      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~118      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~119      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~120      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~121      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~122      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~123      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~124      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~125      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~126      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~127      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~128      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~129      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~130      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~131      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~132      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~133      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~134      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~135      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~136      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~137      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~138      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~139      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~140      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~141      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~142      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~143      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~144      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~145      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~146      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~147      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~148      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~149      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~150      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~151      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~152      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~153      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~154      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~155      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~156      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~157      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~158      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~159      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~160      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~161      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~162      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~163      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~164      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~165      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~166      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~167      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~168      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~169      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~170      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~171      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~172      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~173      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~174      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~175      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~176      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~177      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~178      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~179      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~180      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~181      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~182      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~183      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~184      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~185      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~186      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~187      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~188      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~189      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~190      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~191      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~192      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~193      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~194      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~195      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~196      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~197      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~198      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~199      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~200      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~201      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~202      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~203      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~204      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~205      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~206      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~207      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~208      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~209      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~210      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~211      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~212      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~213      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~214      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~215      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~216      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~217      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~218      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~219      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~220      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~221      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~222      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~223      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~224      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~225      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~226      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~227      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~228      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~229      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~230      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~231      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~232      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~233      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~234      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~235      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~236      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~237      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~238      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~239      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~240      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~241      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~242      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~243      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~244      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~245      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~246      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~247      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~248      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~249      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~250      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~251      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~252      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~253      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~254      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|dino0~255      ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~0         ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~1         ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~2         ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~3         ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~4         ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~5         ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~6         ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~7         ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~8         ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~9         ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~10        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~11        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~12        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~13        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~14        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~15        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~16        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~17        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~18        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~19        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~20        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~21        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~22        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~23        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~24        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~25        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~26        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~27        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~28        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~29        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~30        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~31        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~32        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~33        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~34        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~35        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~36        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~37        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~38        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~39        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~40        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~41        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~42        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~43        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~44        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~45        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~46        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~47        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~48        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~49        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~50        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~51        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~52        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~53        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~54        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~55        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~56        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~57        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~58        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~59        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~60        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~61        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~62        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~63        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~64        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~65        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~66        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~67        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~68        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~69        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~70        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~71        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~72        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~73        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~74        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~75        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~76        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~77        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~78        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~79        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~80        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~81        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~82        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~83        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~84        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~85        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~86        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~87        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~88        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~89        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~90        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~91        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~92        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~93        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~94        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~95        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~96        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~97        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~98        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~99        ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~100       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~101       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~102       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~103       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~104       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~105       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~106       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~107       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~108       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~109       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~110       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~111       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~112       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~113       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~114       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~115       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~116       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~117       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~118       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~119       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~120       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~121       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~122       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~123       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~124       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~125       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~126       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~127       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~128       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~129       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~130       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~131       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~132       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~133       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~134       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~135       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~136       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~137       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~138       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~139       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~140       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~141       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~142       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~143       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~144       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~145       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~146       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~147       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~148       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~149       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~150       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~151       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~152       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~153       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~154       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~155       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~156       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~157       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~158       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~159       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~160       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~161       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~162       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~163       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~164       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~165       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~166       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~167       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~168       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~169       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~170       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~171       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~172       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~173       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~174       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~175       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~176       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~177       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~178       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~179       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~180       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~181       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~182       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~183       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~184       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~185       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~186       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~187       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~188       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~189       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~190       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~191       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~192       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~193       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~194       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~195       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~196       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~197       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~198       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~199       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~200       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~201       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~202       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~203       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~204       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~205       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~206       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~207       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~208       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~209       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~210       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~211       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~212       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~213       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~214       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~215       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~216       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~217       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~218       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~219       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~220       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~221       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~222       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~223       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~224       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~225       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~226       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~227       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~228       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~229       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~230       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~231       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~232       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~233       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~234       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~235       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~236       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~237       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~238       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~239       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~240       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~241       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~242       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~243       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~244       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~245       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~246       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~247       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~248       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~249       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~250       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~251       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~252       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~253       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~254       ; Stuck at GND due to stuck port clock          ;
+; vga_display:niceGraphics|voa0~255       ; Stuck at GND due to stuck port clock          ;
+; dinoRunner:jogoInsano|tempoC            ; Merged with dinoRunner:jogoInsano|posicaoP[0] ;
+; Total Number of Removed Registers = 516 ;                                               ;
++-----------------------------------------+-----------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 126   ;
+; Number of registers using Synchronous Clear  ; 27    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 38    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 88    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; dinoRunner:jogoInsano|dia               ; 2       ;
+; dinoRunner:jogoInsano|posicaoP[9]       ; 4       ;
+; dinoRunner:jogoInsano|posicaoP[8]       ; 5       ;
+; dinoRunner:jogoInsano|posicaoP[7]       ; 5       ;
+; dinoRunner:jogoInsano|posicaoP[6]       ; 5       ;
+; dinoRunner:jogoInsano|posicaoP[5]       ; 5       ;
+; dinoRunner:jogoInsano|posicaoP[4]       ; 6       ;
+; dinoRunner:jogoInsano|posicaoP[3]       ; 5       ;
+; dinoRunner:jogoInsano|posicaoP[2]       ; 4       ;
+; dinoRunner:jogoInsano|posicaoP[0]       ; 15      ;
+; dinoRunner:jogoInsano|posicaoP[1]       ; 4       ;
+; dinoRunner:jogoInsano|posicaoC[9]       ; 5       ;
+; dinoRunner:jogoInsano|posicaoC[6]       ; 5       ;
+; dinoRunner:jogoInsano|posicaoC[5]       ; 9       ;
+; dinoRunner:jogoInsano|posicaoC[4]       ; 9       ;
+; dinoRunner:jogoInsano|posicaoC[3]       ; 6       ;
+; dinoRunner:jogoInsano|posicaoC[0]       ; 4       ;
+; dinoRunner:jogoInsano|posicaoC[1]       ; 6       ;
+; dinoRunner:jogoInsano|posicaoC[2]       ; 6       ;
+; Total number of inverted registers = 19 ;         ;
++-----------------------------------------+---------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
+; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |dinossauroRawr|VGA_SYNC:video_PLL|v_count[0]     ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |dinossauroRawr|dinoRunner:jogoInsano|posicaoC[8] ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |dinossauroRawr|dinoRunner:jogoInsano|topo[0]     ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |dinossauroRawr|dinoRunner:jogoInsano|posicaoC[0] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: VGA_SYNC:video_PLL|video_PLL:video_PLL_inst|altpll:altpll_component ;
++-------------------------------+-------------------+--------------------------------------------------------------+
+; Parameter Name                ; Value             ; Type                                                         ;
++-------------------------------+-------------------+--------------------------------------------------------------+
+; OPERATION_MODE                ; NORMAL            ; Untyped                                                      ;
+; PLL_TYPE                      ; FAST              ; Untyped                                                      ;
+; LPM_HINT                      ; UNUSED            ; Untyped                                                      ;
+; QUALIFY_CONF_DONE             ; OFF               ; Untyped                                                      ;
+; COMPENSATE_CLOCK              ; CLK0              ; Untyped                                                      ;
+; SCAN_CHAIN                    ; LONG              ; Untyped                                                      ;
+; PRIMARY_CLOCK                 ; INCLK0            ; Untyped                                                      ;
+; INCLK0_INPUT_FREQUENCY        ; 20000             ; Signed Integer                                               ;
+; INCLK1_INPUT_FREQUENCY        ; 0                 ; Untyped                                                      ;
+; GATE_LOCK_SIGNAL              ; NO                ; Untyped                                                      ;
+; GATE_LOCK_COUNTER             ; 0                 ; Untyped                                                      ;
+; LOCK_HIGH                     ; 1                 ; Untyped                                                      ;
+; LOCK_LOW                      ; 1                 ; Untyped                                                      ;
+; VALID_LOCK_MULTIPLIER         ; 1                 ; Untyped                                                      ;
+; INVALID_LOCK_MULTIPLIER       ; 5                 ; Untyped                                                      ;
+; SWITCH_OVER_ON_LOSSCLK        ; OFF               ; Untyped                                                      ;
+; SWITCH_OVER_ON_GATED_LOCK     ; OFF               ; Untyped                                                      ;
+; ENABLE_SWITCH_OVER_COUNTER    ; OFF               ; Untyped                                                      ;
+; SKIP_VCO                      ; OFF               ; Untyped                                                      ;
+; SWITCH_OVER_COUNTER           ; 0                 ; Untyped                                                      ;
+; SWITCH_OVER_TYPE              ; AUTO              ; Untyped                                                      ;
+; FEEDBACK_SOURCE               ; EXTCLK0           ; Untyped                                                      ;
+; BANDWIDTH                     ; 0                 ; Untyped                                                      ;
+; BANDWIDTH_TYPE                ; AUTO              ; Untyped                                                      ;
+; SPREAD_FREQUENCY              ; 0                 ; Untyped                                                      ;
+; DOWN_SPREAD                   ; 0                 ; Untyped                                                      ;
+; SELF_RESET_ON_GATED_LOSS_LOCK ; OFF               ; Untyped                                                      ;
+; SELF_RESET_ON_LOSS_LOCK       ; OFF               ; Untyped                                                      ;
+; CLK9_MULTIPLY_BY              ; 0                 ; Untyped                                                      ;
+; CLK8_MULTIPLY_BY              ; 0                 ; Untyped                                                      ;
+; CLK7_MULTIPLY_BY              ; 0                 ; Untyped                                                      ;
+; CLK6_MULTIPLY_BY              ; 0                 ; Untyped                                                      ;
+; CLK5_MULTIPLY_BY              ; 1                 ; Untyped                                                      ;
+; CLK4_MULTIPLY_BY              ; 1                 ; Untyped                                                      ;
+; CLK3_MULTIPLY_BY              ; 1                 ; Untyped                                                      ;
+; CLK2_MULTIPLY_BY              ; 1                 ; Untyped                                                      ;
+; CLK1_MULTIPLY_BY              ; 1                 ; Untyped                                                      ;
+; CLK0_MULTIPLY_BY              ; 1                 ; Signed Integer                                               ;
+; CLK9_DIVIDE_BY                ; 0                 ; Untyped                                                      ;
+; CLK8_DIVIDE_BY                ; 0                 ; Untyped                                                      ;
+; CLK7_DIVIDE_BY                ; 0                 ; Untyped                                                      ;
+; CLK6_DIVIDE_BY                ; 0                 ; Untyped                                                      ;
+; CLK5_DIVIDE_BY                ; 1                 ; Untyped                                                      ;
+; CLK4_DIVIDE_BY                ; 1                 ; Untyped                                                      ;
+; CLK3_DIVIDE_BY                ; 1                 ; Untyped                                                      ;
+; CLK2_DIVIDE_BY                ; 1                 ; Untyped                                                      ;
+; CLK1_DIVIDE_BY                ; 1                 ; Untyped                                                      ;
+; CLK0_DIVIDE_BY                ; 2                 ; Signed Integer                                               ;
+; CLK9_PHASE_SHIFT              ; 0                 ; Untyped                                                      ;
+; CLK8_PHASE_SHIFT              ; 0                 ; Untyped                                                      ;
+; CLK7_PHASE_SHIFT              ; 0                 ; Untyped                                                      ;
+; CLK6_PHASE_SHIFT              ; 0                 ; Untyped                                                      ;
+; CLK5_PHASE_SHIFT              ; 0                 ; Untyped                                                      ;
+; CLK4_PHASE_SHIFT              ; 0                 ; Untyped                                                      ;
+; CLK3_PHASE_SHIFT              ; 0                 ; Untyped                                                      ;
+; CLK2_PHASE_SHIFT              ; 0                 ; Untyped                                                      ;
+; CLK1_PHASE_SHIFT              ; 0                 ; Untyped                                                      ;
+; CLK0_PHASE_SHIFT              ; 0                 ; Untyped                                                      ;
+; CLK5_TIME_DELAY               ; 0                 ; Untyped                                                      ;
+; CLK4_TIME_DELAY               ; 0                 ; Untyped                                                      ;
+; CLK3_TIME_DELAY               ; 0                 ; Untyped                                                      ;
+; CLK2_TIME_DELAY               ; 0                 ; Untyped                                                      ;
+; CLK1_TIME_DELAY               ; 0                 ; Untyped                                                      ;
+; CLK0_TIME_DELAY               ; 0                 ; Untyped                                                      ;
+; CLK9_DUTY_CYCLE               ; 50                ; Untyped                                                      ;
+; CLK8_DUTY_CYCLE               ; 50                ; Untyped                                                      ;
+; CLK7_DUTY_CYCLE               ; 50                ; Untyped                                                      ;
+; CLK6_DUTY_CYCLE               ; 50                ; Untyped                                                      ;
+; CLK5_DUTY_CYCLE               ; 50                ; Untyped                                                      ;
+; CLK4_DUTY_CYCLE               ; 50                ; Untyped                                                      ;
+; CLK3_DUTY_CYCLE               ; 50                ; Untyped                                                      ;
+; CLK2_DUTY_CYCLE               ; 50                ; Untyped                                                      ;
+; CLK1_DUTY_CYCLE               ; 50                ; Untyped                                                      ;
+; CLK0_DUTY_CYCLE               ; 50                ; Signed Integer                                               ;
+; CLK9_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped                                                      ;
+; CLK8_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped                                                      ;
+; CLK7_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped                                                      ;
+; CLK6_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped                                                      ;
+; CLK5_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped                                                      ;
+; CLK4_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped                                                      ;
+; CLK3_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped                                                      ;
+; CLK2_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped                                                      ;
+; CLK1_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped                                                      ;
+; CLK0_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped                                                      ;
+; CLK9_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped                                                      ;
+; CLK8_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped                                                      ;
+; CLK7_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped                                                      ;
+; CLK6_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped                                                      ;
+; CLK5_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped                                                      ;
+; CLK4_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped                                                      ;
+; CLK3_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped                                                      ;
+; CLK2_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped                                                      ;
+; CLK1_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped                                                      ;
+; CLK0_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped                                                      ;
+; LOCK_WINDOW_UI                ;  0.05             ; Untyped                                                      ;
+; LOCK_WINDOW_UI_BITS           ; UNUSED            ; Untyped                                                      ;
+; VCO_RANGE_DETECTOR_LOW_BITS   ; UNUSED            ; Untyped                                                      ;
+; VCO_RANGE_DETECTOR_HIGH_BITS  ; UNUSED            ; Untyped                                                      ;
+; DPA_MULTIPLY_BY               ; 0                 ; Untyped                                                      ;
+; DPA_DIVIDE_BY                 ; 1                 ; Untyped                                                      ;
+; DPA_DIVIDER                   ; 0                 ; Untyped                                                      ;
+; EXTCLK3_MULTIPLY_BY           ; 1                 ; Untyped                                                      ;
+; EXTCLK2_MULTIPLY_BY           ; 1                 ; Untyped                                                      ;
+; EXTCLK1_MULTIPLY_BY           ; 1                 ; Untyped                                                      ;
+; EXTCLK0_MULTIPLY_BY           ; 1                 ; Untyped                                                      ;
+; EXTCLK3_DIVIDE_BY             ; 1                 ; Untyped                                                      ;
+; EXTCLK2_DIVIDE_BY             ; 1                 ; Untyped                                                      ;
+; EXTCLK1_DIVIDE_BY             ; 1                 ; Untyped                                                      ;
+; EXTCLK0_DIVIDE_BY             ; 1                 ; Untyped                                                      ;
+; EXTCLK3_PHASE_SHIFT           ; 0                 ; Untyped                                                      ;
+; EXTCLK2_PHASE_SHIFT           ; 0                 ; Untyped                                                      ;
+; EXTCLK1_PHASE_SHIFT           ; 0                 ; Untyped                                                      ;
+; EXTCLK0_PHASE_SHIFT           ; 0                 ; Untyped                                                      ;
+; EXTCLK3_TIME_DELAY            ; 0                 ; Untyped                                                      ;
+; EXTCLK2_TIME_DELAY            ; 0                 ; Untyped                                                      ;
+; EXTCLK1_TIME_DELAY            ; 0                 ; Untyped                                                      ;
+; EXTCLK0_TIME_DELAY            ; 0                 ; Untyped                                                      ;
+; EXTCLK3_DUTY_CYCLE            ; 50                ; Untyped                                                      ;
+; EXTCLK2_DUTY_CYCLE            ; 50                ; Untyped                                                      ;
+; EXTCLK1_DUTY_CYCLE            ; 50                ; Untyped                                                      ;
+; EXTCLK0_DUTY_CYCLE            ; 50                ; Untyped                                                      ;
+; VCO_MULTIPLY_BY               ; 0                 ; Untyped                                                      ;
+; VCO_DIVIDE_BY                 ; 0                 ; Untyped                                                      ;
+; SCLKOUT0_PHASE_SHIFT          ; 0                 ; Untyped                                                      ;
+; SCLKOUT1_PHASE_SHIFT          ; 0                 ; Untyped                                                      ;
+; VCO_MIN                       ; 0                 ; Untyped                                                      ;
+; VCO_MAX                       ; 0                 ; Untyped                                                      ;
+; VCO_CENTER                    ; 0                 ; Untyped                                                      ;
+; PFD_MIN                       ; 0                 ; Untyped                                                      ;
+; PFD_MAX                       ; 0                 ; Untyped                                                      ;
+; M_INITIAL                     ; 0                 ; Untyped                                                      ;
+; M                             ; 0                 ; Untyped                                                      ;
+; N                             ; 1                 ; Untyped                                                      ;
+; M2                            ; 1                 ; Untyped                                                      ;
+; N2                            ; 1                 ; Untyped                                                      ;
+; SS                            ; 1                 ; Untyped                                                      ;
+; C0_HIGH                       ; 0                 ; Untyped                                                      ;
+; C1_HIGH                       ; 0                 ; Untyped                                                      ;
+; C2_HIGH                       ; 0                 ; Untyped                                                      ;
+; C3_HIGH                       ; 0                 ; Untyped                                                      ;
+; C4_HIGH                       ; 0                 ; Untyped                                                      ;
+; C5_HIGH                       ; 0                 ; Untyped                                                      ;
+; C6_HIGH                       ; 0                 ; Untyped                                                      ;
+; C7_HIGH                       ; 0                 ; Untyped                                                      ;
+; C8_HIGH                       ; 0                 ; Untyped                                                      ;
+; C9_HIGH                       ; 0                 ; Untyped                                                      ;
+; C0_LOW                        ; 0                 ; Untyped                                                      ;
+; C1_LOW                        ; 0                 ; Untyped                                                      ;
+; C2_LOW                        ; 0                 ; Untyped                                                      ;
+; C3_LOW                        ; 0                 ; Untyped                                                      ;
+; C4_LOW                        ; 0                 ; Untyped                                                      ;
+; C5_LOW                        ; 0                 ; Untyped                                                      ;
+; C6_LOW                        ; 0                 ; Untyped                                                      ;
+; C7_LOW                        ; 0                 ; Untyped                                                      ;
+; C8_LOW                        ; 0                 ; Untyped                                                      ;
+; C9_LOW                        ; 0                 ; Untyped                                                      ;
+; C0_INITIAL                    ; 0                 ; Untyped                                                      ;
+; C1_INITIAL                    ; 0                 ; Untyped                                                      ;
+; C2_INITIAL                    ; 0                 ; Untyped                                                      ;
+; C3_INITIAL                    ; 0                 ; Untyped                                                      ;
+; C4_INITIAL                    ; 0                 ; Untyped                                                      ;
+; C5_INITIAL                    ; 0                 ; Untyped                                                      ;
+; C6_INITIAL                    ; 0                 ; Untyped                                                      ;
+; C7_INITIAL                    ; 0                 ; Untyped                                                      ;
+; C8_INITIAL                    ; 0                 ; Untyped                                                      ;
+; C9_INITIAL                    ; 0                 ; Untyped                                                      ;
+; C0_MODE                       ; BYPASS            ; Untyped                                                      ;
+; C1_MODE                       ; BYPASS            ; Untyped                                                      ;
+; C2_MODE                       ; BYPASS            ; Untyped                                                      ;
+; C3_MODE                       ; BYPASS            ; Untyped                                                      ;
+; C4_MODE                       ; BYPASS            ; Untyped                                                      ;
+; C5_MODE                       ; BYPASS            ; Untyped                                                      ;
+; C6_MODE                       ; BYPASS            ; Untyped                                                      ;
+; C7_MODE                       ; BYPASS            ; Untyped                                                      ;
+; C8_MODE                       ; BYPASS            ; Untyped                                                      ;
+; C9_MODE                       ; BYPASS            ; Untyped                                                      ;
+; C0_PH                         ; 0                 ; Untyped                                                      ;
+; C1_PH                         ; 0                 ; Untyped                                                      ;
+; C2_PH                         ; 0                 ; Untyped                                                      ;
+; C3_PH                         ; 0                 ; Untyped                                                      ;
+; C4_PH                         ; 0                 ; Untyped                                                      ;
+; C5_PH                         ; 0                 ; Untyped                                                      ;
+; C6_PH                         ; 0                 ; Untyped                                                      ;
+; C7_PH                         ; 0                 ; Untyped                                                      ;
+; C8_PH                         ; 0                 ; Untyped                                                      ;
+; C9_PH                         ; 0                 ; Untyped                                                      ;
+; L0_HIGH                       ; 1                 ; Untyped                                                      ;
+; L1_HIGH                       ; 1                 ; Untyped                                                      ;
+; G0_HIGH                       ; 1                 ; Untyped                                                      ;
+; G1_HIGH                       ; 1                 ; Untyped                                                      ;
+; G2_HIGH                       ; 1                 ; Untyped                                                      ;
+; G3_HIGH                       ; 1                 ; Untyped                                                      ;
+; E0_HIGH                       ; 1                 ; Untyped                                                      ;
+; E1_HIGH                       ; 1                 ; Untyped                                                      ;
+; E2_HIGH                       ; 1                 ; Untyped                                                      ;
+; E3_HIGH                       ; 1                 ; Untyped                                                      ;
+; L0_LOW                        ; 1                 ; Untyped                                                      ;
+; L1_LOW                        ; 1                 ; Untyped                                                      ;
+; G0_LOW                        ; 1                 ; Untyped                                                      ;
+; G1_LOW                        ; 1                 ; Untyped                                                      ;
+; G2_LOW                        ; 1                 ; Untyped                                                      ;
+; G3_LOW                        ; 1                 ; Untyped                                                      ;
+; E0_LOW                        ; 1                 ; Untyped                                                      ;
+; E1_LOW                        ; 1                 ; Untyped                                                      ;
+; E2_LOW                        ; 1                 ; Untyped                                                      ;
+; E3_LOW                        ; 1                 ; Untyped                                                      ;
+; L0_INITIAL                    ; 1                 ; Untyped                                                      ;
+; L1_INITIAL                    ; 1                 ; Untyped                                                      ;
+; G0_INITIAL                    ; 1                 ; Untyped                                                      ;
+; G1_INITIAL                    ; 1                 ; Untyped                                                      ;
+; G2_INITIAL                    ; 1                 ; Untyped                                                      ;
+; G3_INITIAL                    ; 1                 ; Untyped                                                      ;
+; E0_INITIAL                    ; 1                 ; Untyped                                                      ;
+; E1_INITIAL                    ; 1                 ; Untyped                                                      ;
+; E2_INITIAL                    ; 1                 ; Untyped                                                      ;
+; E3_INITIAL                    ; 1                 ; Untyped                                                      ;
+; L0_MODE                       ; BYPASS            ; Untyped                                                      ;
+; L1_MODE                       ; BYPASS            ; Untyped                                                      ;
+; G0_MODE                       ; BYPASS            ; Untyped                                                      ;
+; G1_MODE                       ; BYPASS            ; Untyped                                                      ;
+; G2_MODE                       ; BYPASS            ; Untyped                                                      ;
+; G3_MODE                       ; BYPASS            ; Untyped                                                      ;
+; E0_MODE                       ; BYPASS            ; Untyped                                                      ;
+; E1_MODE                       ; BYPASS            ; Untyped                                                      ;
+; E2_MODE                       ; BYPASS            ; Untyped                                                      ;
+; E3_MODE                       ; BYPASS            ; Untyped                                                      ;
+; L0_PH                         ; 0                 ; Untyped                                                      ;
+; L1_PH                         ; 0                 ; Untyped                                                      ;
+; G0_PH                         ; 0                 ; Untyped                                                      ;
+; G1_PH                         ; 0                 ; Untyped                                                      ;
+; G2_PH                         ; 0                 ; Untyped                                                      ;
+; G3_PH                         ; 0                 ; Untyped                                                      ;
+; E0_PH                         ; 0                 ; Untyped                                                      ;
+; E1_PH                         ; 0                 ; Untyped                                                      ;
+; E2_PH                         ; 0                 ; Untyped                                                      ;
+; E3_PH                         ; 0                 ; Untyped                                                      ;
+; M_PH                          ; 0                 ; Untyped                                                      ;
+; C1_USE_CASC_IN                ; OFF               ; Untyped                                                      ;
+; C2_USE_CASC_IN                ; OFF               ; Untyped                                                      ;
+; C3_USE_CASC_IN                ; OFF               ; Untyped                                                      ;
+; C4_USE_CASC_IN                ; OFF               ; Untyped                                                      ;
+; C5_USE_CASC_IN                ; OFF               ; Untyped                                                      ;
+; C6_USE_CASC_IN                ; OFF               ; Untyped                                                      ;
+; C7_USE_CASC_IN                ; OFF               ; Untyped                                                      ;
+; C8_USE_CASC_IN                ; OFF               ; Untyped                                                      ;
+; C9_USE_CASC_IN                ; OFF               ; Untyped                                                      ;
+; CLK0_COUNTER                  ; G0                ; Untyped                                                      ;
+; CLK1_COUNTER                  ; G0                ; Untyped                                                      ;
+; CLK2_COUNTER                  ; G0                ; Untyped                                                      ;
+; CLK3_COUNTER                  ; G0                ; Untyped                                                      ;
+; CLK4_COUNTER                  ; G0                ; Untyped                                                      ;
+; CLK5_COUNTER                  ; G0                ; Untyped                                                      ;
+; CLK6_COUNTER                  ; E0                ; Untyped                                                      ;
+; CLK7_COUNTER                  ; E1                ; Untyped                                                      ;
+; CLK8_COUNTER                  ; E2                ; Untyped                                                      ;
+; CLK9_COUNTER                  ; E3                ; Untyped                                                      ;
+; L0_TIME_DELAY                 ; 0                 ; Untyped                                                      ;
+; L1_TIME_DELAY                 ; 0                 ; Untyped                                                      ;
+; G0_TIME_DELAY                 ; 0                 ; Untyped                                                      ;
+; G1_TIME_DELAY                 ; 0                 ; Untyped                                                      ;
+; G2_TIME_DELAY                 ; 0                 ; Untyped                                                      ;
+; G3_TIME_DELAY                 ; 0                 ; Untyped                                                      ;
+; E0_TIME_DELAY                 ; 0                 ; Untyped                                                      ;
+; E1_TIME_DELAY                 ; 0                 ; Untyped                                                      ;
+; E2_TIME_DELAY                 ; 0                 ; Untyped                                                      ;
+; E3_TIME_DELAY                 ; 0                 ; Untyped                                                      ;
+; M_TIME_DELAY                  ; 0                 ; Untyped                                                      ;
+; N_TIME_DELAY                  ; 0                 ; Untyped                                                      ;
+; EXTCLK3_COUNTER               ; E3                ; Untyped                                                      ;
+; EXTCLK2_COUNTER               ; E2                ; Untyped                                                      ;
+; EXTCLK1_COUNTER               ; E1                ; Untyped                                                      ;
+; EXTCLK0_COUNTER               ; E0                ; Untyped                                                      ;
+; ENABLE0_COUNTER               ; L0                ; Untyped                                                      ;
+; ENABLE1_COUNTER               ; L0                ; Untyped                                                      ;
+; CHARGE_PUMP_CURRENT           ; 2                 ; Untyped                                                      ;
+; LOOP_FILTER_R                 ;  1.000000         ; Untyped                                                      ;
+; LOOP_FILTER_C                 ; 5                 ; Untyped                                                      ;
+; CHARGE_PUMP_CURRENT_BITS      ; 9999              ; Untyped                                                      ;
+; LOOP_FILTER_R_BITS            ; 9999              ; Untyped                                                      ;
+; LOOP_FILTER_C_BITS            ; 9999              ; Untyped                                                      ;
+; VCO_POST_SCALE                ; 0                 ; Untyped                                                      ;
+; CLK2_OUTPUT_FREQUENCY         ; 0                 ; Untyped                                                      ;
+; CLK1_OUTPUT_FREQUENCY         ; 0                 ; Untyped                                                      ;
+; CLK0_OUTPUT_FREQUENCY         ; 0                 ; Untyped                                                      ;
+; INTENDED_DEVICE_FAMILY        ; Cyclone II        ; Untyped                                                      ;
+; PORT_CLKENA0                  ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_CLKENA1                  ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_CLKENA2                  ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_CLKENA3                  ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_CLKENA4                  ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_CLKENA5                  ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_EXTCLKENA0               ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_EXTCLKENA1               ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_EXTCLKENA2               ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_EXTCLKENA3               ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_EXTCLK0                  ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_EXTCLK1                  ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_EXTCLK2                  ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_EXTCLK3                  ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_CLKBAD0                  ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_CLKBAD1                  ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_CLK0                     ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_CLK1                     ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_CLK2                     ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_CLK3                     ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_CLK4                     ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_CLK5                     ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_CLK6                     ; PORT_UNUSED       ; Untyped                                                      ;
+; PORT_CLK7                     ; PORT_UNUSED       ; Untyped                                                      ;
+; PORT_CLK8                     ; PORT_UNUSED       ; Untyped                                                      ;
+; PORT_CLK9                     ; PORT_UNUSED       ; Untyped                                                      ;
+; PORT_SCANDATA                 ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_SCANDATAOUT              ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_SCANDONE                 ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_SCLKOUT1                 ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_SCLKOUT0                 ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_ACTIVECLOCK              ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_CLKLOSS                  ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_INCLK1                   ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_INCLK0                   ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_FBIN                     ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_PLLENA                   ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_CLKSWITCH                ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_ARESET                   ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_PFDENA                   ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_SCANCLK                  ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_SCANACLR                 ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_SCANREAD                 ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_SCANWRITE                ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_ENABLE0                  ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_ENABLE1                  ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_LOCKED                   ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_CONFIGUPDATE             ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_FBOUT                    ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_PHASEDONE                ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_PHASESTEP                ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_PHASEUPDOWN              ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_SCANCLKENA               ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_PHASECOUNTERSELECT       ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_VCOOVERRANGE             ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; PORT_VCOUNDERRANGE            ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; M_TEST_SOURCE                 ; 5                 ; Untyped                                                      ;
+; C0_TEST_SOURCE                ; 5                 ; Untyped                                                      ;
+; C1_TEST_SOURCE                ; 5                 ; Untyped                                                      ;
+; C2_TEST_SOURCE                ; 5                 ; Untyped                                                      ;
+; C3_TEST_SOURCE                ; 5                 ; Untyped                                                      ;
+; C4_TEST_SOURCE                ; 5                 ; Untyped                                                      ;
+; C5_TEST_SOURCE                ; 5                 ; Untyped                                                      ;
+; C6_TEST_SOURCE                ; 5                 ; Untyped                                                      ;
+; C7_TEST_SOURCE                ; 5                 ; Untyped                                                      ;
+; C8_TEST_SOURCE                ; 5                 ; Untyped                                                      ;
+; C9_TEST_SOURCE                ; 5                 ; Untyped                                                      ;
+; CBXI_PARAMETER                ; altpll_80u        ; Untyped                                                      ;
+; VCO_FREQUENCY_CONTROL         ; AUTO              ; Untyped                                                      ;
+; VCO_PHASE_SHIFT_STEP          ; 0                 ; Untyped                                                      ;
+; WIDTH_CLOCK                   ; 6                 ; Untyped                                                      ;
+; WIDTH_PHASECOUNTERSELECT      ; 4                 ; Untyped                                                      ;
+; USING_FBMIMICBIDIR_PORT       ; OFF               ; Untyped                                                      ;
+; DEVICE_FAMILY                 ; Cyclone V         ; Untyped                                                      ;
+; SCAN_CHAIN_MIF_FILE           ; UNUSED            ; Untyped                                                      ;
+; SIM_GATE_LOCK_DEVICE_BEHAVIOR ; OFF               ; Untyped                                                      ;
+; AUTO_CARRY_CHAINS             ; ON                ; AUTO_CARRY                                                   ;
+; IGNORE_CARRY_BUFFERS          ; OFF               ; IGNORE_CARRY                                                 ;
+; AUTO_CASCADE_CHAINS           ; ON                ; AUTO_CASCADE                                                 ;
+; IGNORE_CASCADE_BUFFERS        ; OFF               ; IGNORE_CASCADE                                               ;
++-------------------------------+-------------------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga_display:niceGraphics ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; DINO_X         ; 50    ; Signed Integer                               ;
+; DINO_Y         ; 434   ; Signed Integer                               ;
+; CACTO_Y        ; 434   ; Signed Integer                               ;
+; PASSARO_Y      ; 340   ; Signed Integer                               ;
+; PONTUACAO_X    ; 600   ; Signed Integer                               ;
+; PONTUACAO_Y    ; 10    ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: vga_display:niceGraphics|lpm_divide:Div0 ;
++------------------------+----------------+-------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                            ;
++------------------------+----------------+-------------------------------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                                         ;
+; LPM_WIDTHD             ; 4              ; Untyped                                         ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                         ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                         ;
+; LPM_PIPELINE           ; 0              ; Untyped                                         ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                         ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                         ;
+; CBXI_PARAMETER         ; lpm_divide_4am ; Untyped                                         ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                         ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                         ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                      ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                    ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                    ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                  ;
++------------------------+----------------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: vga_display:niceGraphics|lpm_divide:Mod0 ;
++------------------------+----------------+-------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                            ;
++------------------------+----------------+-------------------------------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                                         ;
+; LPM_WIDTHD             ; 4              ; Untyped                                         ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                         ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                         ;
+; LPM_PIPELINE           ; 0              ; Untyped                                         ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                         ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                         ;
+; CBXI_PARAMETER         ; lpm_divide_72m ; Untyped                                         ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                         ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                         ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                      ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                    ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                    ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                  ;
++------------------------+----------------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; altpll Parameter Settings by Entity Instance                                                        ;
++-------------------------------+---------------------------------------------------------------------+
+; Name                          ; Value                                                               ;
++-------------------------------+---------------------------------------------------------------------+
+; Number of entity instances    ; 1                                                                   ;
+; Entity Instance               ; VGA_SYNC:video_PLL|video_PLL:video_PLL_inst|altpll:altpll_component ;
+;     -- OPERATION_MODE         ; NORMAL                                                              ;
+;     -- PLL_TYPE               ; FAST                                                                ;
+;     -- PRIMARY_CLOCK          ; INCLK0                                                              ;
+;     -- INCLK0_INPUT_FREQUENCY ; 20000                                                               ;
+;     -- INCLK1_INPUT_FREQUENCY ; 0                                                                   ;
+;     -- VCO_MULTIPLY_BY        ; 0                                                                   ;
+;     -- VCO_DIVIDE_BY          ; 0                                                                   ;
++-------------------------------+---------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 126                         ;
+;     CLR               ; 1                           ;
+;     ENA               ; 41                          ;
+;     ENA CLR           ; 30                          ;
+;     ENA CLR SCLR      ; 7                           ;
+;     ENA SCLR          ; 10                          ;
+;     SCLR              ; 10                          ;
+;     plain             ; 27                          ;
+; arriav_lcell_comb     ; 507                         ;
+;     arith             ; 146                         ;
+;         0 data inputs ; 15                          ;
+;         1 data inputs ; 98                          ;
+;         2 data inputs ; 13                          ;
+;         3 data inputs ; 16                          ;
+;         4 data inputs ; 4                           ;
+;     extend            ; 8                           ;
+;         7 data inputs ; 8                           ;
+;     normal            ; 331                         ;
+;         1 data inputs ; 13                          ;
+;         2 data inputs ; 45                          ;
+;         3 data inputs ; 43                          ;
+;         4 data inputs ; 20                          ;
+;         5 data inputs ; 70                          ;
+;         6 data inputs ; 140                         ;
+;     shared            ; 22                          ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 8                           ;
+;         2 data inputs ; 12                          ;
+; boundary_port         ; 9                           ;
+; generic_pll           ; 1                           ;
+;                       ;                             ;
+; Max LUT depth         ; 13.50                       ;
+; Average LUT depth     ; 6.79                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+    Info: Processing started: Tue Dec 16 15:08:49 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off dinossauroRawr -c dinossauroRawr
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file dinossaurorawr.bdf
+    Info (12023): Found entity 1: dinossauroRawr
+Warning (12019): Can't analyze file -- file ../../../Downloads/dinossauroRawr.v is missing
+Warning (12019): Can't analyze file -- file ../../../Downloads/Verilog2.v is missing
+Info (12021): Found 1 design units, including 1 entities, in source file vga_display.v
+    Info (12023): Found entity 1: vga_display File: C:/Users/847034/Desktop/SD/trex/vga_display.v Line: 1
+Info (12127): Elaborating entity "dinossauroRawr" for the top level hierarchy
+Warning (12125): Using design file vga_sync.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: VGA_SYNC-a File: C:/Users/847034/Desktop/SD/trex/vga_sync.vhd Line: 13
+    Info (12023): Found entity 1: VGA_SYNC File: C:/Users/847034/Desktop/SD/trex/vga_sync.vhd Line: 7
+Info (12128): Elaborating entity "VGA_SYNC" for hierarchy "VGA_SYNC:video_PLL"
+Warning (12125): Using design file video_pll.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: video_pll-SYN File: C:/Users/847034/Desktop/SD/trex/video_pll.vhd Line: 48
+    Info (12023): Found entity 1: video_PLL File: C:/Users/847034/Desktop/SD/trex/video_pll.vhd Line: 39
+Info (12128): Elaborating entity "video_PLL" for hierarchy "VGA_SYNC:video_PLL|video_PLL:video_PLL_inst" File: C:/Users/847034/Desktop/SD/trex/vga_sync.vhd Line: 45
+Info (12128): Elaborating entity "altpll" for hierarchy "VGA_SYNC:video_PLL|video_PLL:video_PLL_inst|altpll:altpll_component" File: C:/Users/847034/Desktop/SD/trex/video_pll.vhd Line: 86
+Info (12130): Elaborated megafunction instantiation "VGA_SYNC:video_PLL|video_PLL:video_PLL_inst|altpll:altpll_component" File: C:/Users/847034/Desktop/SD/trex/video_pll.vhd Line: 86
+Info (12133): Instantiated megafunction "VGA_SYNC:video_PLL|video_PLL:video_PLL_inst|altpll:altpll_component" with the following parameter: File: C:/Users/847034/Desktop/SD/trex/video_pll.vhd Line: 86
+    Info (12134): Parameter "clk0_duty_cycle" = "50"
+    Info (12134): Parameter "lpm_type" = "altpll"
+    Info (12134): Parameter "clk0_multiply_by" = "1"
+    Info (12134): Parameter "inclk0_input_frequency" = "20000"
+    Info (12134): Parameter "clk0_divide_by" = "2"
+    Info (12134): Parameter "pll_type" = "FAST"
+    Info (12134): Parameter "intended_device_family" = "Cyclone II"
+    Info (12134): Parameter "operation_mode" = "NORMAL"
+    Info (12134): Parameter "compensate_clock" = "CLK0"
+    Info (12134): Parameter "clk0_phase_shift" = "0"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altpll_80u.tdf
+    Info (12023): Found entity 1: altpll_80u File: C:/Users/847034/Desktop/SD/trex/db/altpll_80u.tdf Line: 26
+Info (12128): Elaborating entity "altpll_80u" for hierarchy "VGA_SYNC:video_PLL|video_PLL:video_PLL_inst|altpll:altpll_component|altpll_80u:auto_generated" File: c:/intelfpga/23.1std/quartus/libraries/megafunctions/altpll.tdf Line: 898
+Info (12128): Elaborating entity "vga_display" for hierarchy "vga_display:niceGraphics"
+Warning (10230): Verilog HDL assignment warning at vga_display.v(308): truncated value with size 32 to match size of target (10) File: C:/Users/847034/Desktop/SD/trex/vga_display.v Line: 308
+Warning (10230): Verilog HDL assignment warning at vga_display.v(310): truncated value with size 32 to match size of target (4) File: C:/Users/847034/Desktop/SD/trex/vga_display.v Line: 310
+Warning (10230): Verilog HDL assignment warning at vga_display.v(312): truncated value with size 10 to match size of target (4) File: C:/Users/847034/Desktop/SD/trex/vga_display.v Line: 312
+Warning (10230): Verilog HDL assignment warning at vga_display.v(314): truncated value with size 32 to match size of target (4) File: C:/Users/847034/Desktop/SD/trex/vga_display.v Line: 314
+Warning (10230): Verilog HDL assignment warning at vga_display.v(316): truncated value with size 10 to match size of target (4) File: C:/Users/847034/Desktop/SD/trex/vga_display.v Line: 316
+Warning (10230): Verilog HDL assignment warning at vga_display.v(318): truncated value with size 10 to match size of target (4) File: C:/Users/847034/Desktop/SD/trex/vga_display.v Line: 318
+Warning (10230): Verilog HDL assignment warning at vga_display.v(320): truncated value with size 32 to match size of target (4) File: C:/Users/847034/Desktop/SD/trex/vga_display.v Line: 320
+Warning (10230): Verilog HDL assignment warning at vga_display.v(322): truncated value with size 32 to match size of target (4) File: C:/Users/847034/Desktop/SD/trex/vga_display.v Line: 322
+Warning (10230): Verilog HDL assignment warning at vga_display.v(324): truncated value with size 32 to match size of target (4) File: C:/Users/847034/Desktop/SD/trex/vga_display.v Line: 324
+Warning (10230): Verilog HDL assignment warning at vga_display.v(336): truncated value with size 32 to match size of target (22) File: C:/Users/847034/Desktop/SD/trex/vga_display.v Line: 336
+Warning (10030): Net "dino0.waddr_a" at vga_display.v(32) has no driver or initial value, using a default initial value '0' File: C:/Users/847034/Desktop/SD/trex/vga_display.v Line: 32
+Warning (10030): Net "dino1.waddr_a" at vga_display.v(33) has no driver or initial value, using a default initial value '0' File: C:/Users/847034/Desktop/SD/trex/vga_display.v Line: 33
+Warning (10030): Net "cacto0.waddr_a" at vga_display.v(34) has no driver or initial value, using a default initial value '0' File: C:/Users/847034/Desktop/SD/trex/vga_display.v Line: 34
+Warning (10030): Net "voa0.waddr_a" at vga_display.v(35) has no driver or initial value, using a default initial value '0' File: C:/Users/847034/Desktop/SD/trex/vga_display.v Line: 35
+Warning (10030): Net "voa1.waddr_a" at vga_display.v(36) has no driver or initial value, using a default initial value '0' File: C:/Users/847034/Desktop/SD/trex/vga_display.v Line: 36
+Warning (10030): Net "dino0.data_a" at vga_display.v(32) has no driver or initial value, using a default initial value '0' File: C:/Users/847034/Desktop/SD/trex/vga_display.v Line: 32
+Warning (10030): Net "dino0.we_a" at vga_display.v(32) has no driver or initial value, using a default initial value '0' File: C:/Users/847034/Desktop/SD/trex/vga_display.v Line: 32
+Warning (10030): Net "dino1.data_a" at vga_display.v(33) has no driver or initial value, using a default initial value '0' File: C:/Users/847034/Desktop/SD/trex/vga_display.v Line: 33
+Warning (10030): Net "dino1.we_a" at vga_display.v(33) has no driver or initial value, using a default initial value '0' File: C:/Users/847034/Desktop/SD/trex/vga_display.v Line: 33
+Warning (10030): Net "cacto0.data_a" at vga_display.v(34) has no driver or initial value, using a default initial value '0' File: C:/Users/847034/Desktop/SD/trex/vga_display.v Line: 34
+Warning (10030): Net "cacto0.we_a" at vga_display.v(34) has no driver or initial value, using a default initial value '0' File: C:/Users/847034/Desktop/SD/trex/vga_display.v Line: 34
+Warning (10030): Net "voa0.data_a" at vga_display.v(35) has no driver or initial value, using a default initial value '0' File: C:/Users/847034/Desktop/SD/trex/vga_display.v Line: 35
+Warning (10030): Net "voa0.we_a" at vga_display.v(35) has no driver or initial value, using a default initial value '0' File: C:/Users/847034/Desktop/SD/trex/vga_display.v Line: 35
+Warning (10030): Net "voa1.data_a" at vga_display.v(36) has no driver or initial value, using a default initial value '0' File: C:/Users/847034/Desktop/SD/trex/vga_display.v Line: 36
+Warning (10030): Net "voa1.we_a" at vga_display.v(36) has no driver or initial value, using a default initial value '0' File: C:/Users/847034/Desktop/SD/trex/vga_display.v Line: 36
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "num" into its bus
+Warning (12125): Using design file dinorunner.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: dinoRunner File: C:/Users/847034/Desktop/SD/trex/dinorunner.v Line: 1
+Info (12128): Elaborating entity "dinoRunner" for hierarchy "dinoRunner:jogoInsano"
+Warning (10230): Verilog HDL assignment warning at dinorunner.v(56): truncated value with size 32 to match size of target (7) File: C:/Users/847034/Desktop/SD/trex/dinorunner.v Line: 56
+Warning (10230): Verilog HDL assignment warning at dinorunner.v(59): truncated value with size 32 to match size of target (7) File: C:/Users/847034/Desktop/SD/trex/dinorunner.v Line: 59
+Warning (10230): Verilog HDL assignment warning at dinorunner.v(63): truncated value with size 32 to match size of target (7) File: C:/Users/847034/Desktop/SD/trex/dinorunner.v Line: 63
+Warning (10230): Verilog HDL assignment warning at dinorunner.v(68): truncated value with size 32 to match size of target (10) File: C:/Users/847034/Desktop/SD/trex/dinorunner.v Line: 68
+Warning (10230): Verilog HDL assignment warning at dinorunner.v(73): truncated value with size 32 to match size of target (10) File: C:/Users/847034/Desktop/SD/trex/dinorunner.v Line: 73
+Warning (10230): Verilog HDL assignment warning at dinorunner.v(77): truncated value with size 32 to match size of target (1) File: C:/Users/847034/Desktop/SD/trex/dinorunner.v Line: 77
+Warning (10240): Verilog HDL Always Construct warning at dinorunner.v(87): inferring latch(es) for variable "colisao", which holds its previous value in one or more paths through the always construct File: C:/Users/847034/Desktop/SD/trex/dinorunner.v Line: 87
+Info (10041): Inferred latch for "colisao" at dinorunner.v(87) File: C:/Users/847034/Desktop/SD/trex/dinorunner.v Line: 87
+Warning (12125): Using design file contador.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: contador File: C:/Users/847034/Desktop/SD/trex/contador.v Line: 1
+Info (12128): Elaborating entity "contador" for hierarchy "contador:contaQueEuGosto"
+Warning (10230): Verilog HDL assignment warning at contador.v(11): truncated value with size 32 to match size of target (17) File: C:/Users/847034/Desktop/SD/trex/contador.v Line: 11
+Info (276014): Found 5 instances of uninferred RAM logic
+    Info (276007): RAM logic "vga_display:niceGraphics|dino0" is uninferred due to asynchronous read logic File: C:/Users/847034/Desktop/SD/trex/vga_display.v Line: 32
+    Info (276007): RAM logic "vga_display:niceGraphics|dino1" is uninferred due to asynchronous read logic File: C:/Users/847034/Desktop/SD/trex/vga_display.v Line: 33
+    Info (276007): RAM logic "vga_display:niceGraphics|cacto0" is uninferred due to asynchronous read logic File: C:/Users/847034/Desktop/SD/trex/vga_display.v Line: 34
+    Info (276007): RAM logic "vga_display:niceGraphics|voa0" is uninferred due to asynchronous read logic File: C:/Users/847034/Desktop/SD/trex/vga_display.v Line: 35
+    Info (276007): RAM logic "vga_display:niceGraphics|voa1" is uninferred due to asynchronous read logic File: C:/Users/847034/Desktop/SD/trex/vga_display.v Line: 36
+Info (278001): Inferred 2 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "vga_display:niceGraphics|Div0" File: C:/Users/847034/Desktop/SD/trex/vga_display.v Line: 342
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "vga_display:niceGraphics|Mod0" File: C:/Users/847034/Desktop/SD/trex/vga_display.v Line: 363
+Info (12130): Elaborated megafunction instantiation "vga_display:niceGraphics|lpm_divide:Div0" File: C:/Users/847034/Desktop/SD/trex/vga_display.v Line: 342
+Info (12133): Instantiated megafunction "vga_display:niceGraphics|lpm_divide:Div0" with the following parameter: File: C:/Users/847034/Desktop/SD/trex/vga_display.v Line: 342
+    Info (12134): Parameter "LPM_WIDTHN" = "7"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_4am.tdf
+    Info (12023): Found entity 1: lpm_divide_4am File: C:/Users/847034/Desktop/SD/trex/db/lpm_divide_4am.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_akh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_akh File: C:/Users/847034/Desktop/SD/trex/db/sign_div_unsign_akh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_qse.tdf
+    Info (12023): Found entity 1: alt_u_div_qse File: C:/Users/847034/Desktop/SD/trex/db/alt_u_div_qse.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "vga_display:niceGraphics|lpm_divide:Mod0" File: C:/Users/847034/Desktop/SD/trex/vga_display.v Line: 363
+Info (12133): Instantiated megafunction "vga_display:niceGraphics|lpm_divide:Mod0" with the following parameter: File: C:/Users/847034/Desktop/SD/trex/vga_display.v Line: 363
+    Info (12134): Parameter "LPM_WIDTHN" = "7"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_72m.tdf
+    Info (12023): Found entity 1: lpm_divide_72m File: C:/Users/847034/Desktop/SD/trex/db/lpm_divide_72m.tdf Line: 25
+Info (286030): Timing-Driven Synthesis is running
+Warning (20013): Ignored 24 assignments for entity "my_first_fpga" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity my_first_fpga -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity my_first_fpga -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -entity my_first_fpga -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_PRESERVE_HIGH_SPEED_TILES ON -entity my_first_fpga -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IGNORE_SOURCE_FILE_CHANGES OFF -entity my_first_fpga -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ALWAYS_USE_QXP_NETLIST OFF -entity my_first_fpga -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_COLOR 16764057 -entity my_first_fpga -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_ASSIGNMENTS ON -entity my_first_fpga -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_ASSIGNMENTS REPLACE_CONFLICTING -entity my_first_fpga -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_LOGICLOCK_REGIONS UPDATE_CONFLICTING -entity my_first_fpga -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_PIN_ASSIGNMENTS ON -entity my_first_fpga -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_PROMOTE_ASSIGNMENTS ON -entity my_first_fpga -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_TYPE STANDARD_PARTITION -entity my_first_fpga -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name ALLOW_MULTIPLE_PERSONAS OFF -entity my_first_fpga -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ASD_REGION_ID 1 -entity my_first_fpga -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name CROSS_BOUNDARY_OPTIMIZATIONS OFF -entity my_first_fpga -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PROPAGATE_CONSTANTS_ON_INPUTS ON -entity my_first_fpga -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PROPAGATE_INVERSIONS_ON_INPUTS ON -entity my_first_fpga -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name REMOVE_LOGIC_ON_UNCONNECTED_OUTPUTS ON -entity my_first_fpga -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name MERGE_EQUIVALENT_INPUTS ON -entity my_first_fpga -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name MERGE_EQUIVALENT_BIDIRS ON -entity my_first_fpga -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS ON -entity my_first_fpga -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_EXTRACT_HARD_BLOCK_NODES ON -entity my_first_fpga -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity my_first_fpga -section_id Top was ignored
+Info (144001): Generated suppressed messages file C:/Users/847034/Desktop/SD/trex/output_files/dinossauroRawr.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 5 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
+Warning: RST port on the PLL is not properly connected on instance VGA_SYNC:video_PLL|video_PLL:video_PLL_inst|altpll:altpll_component|altpll_80u:auto_generated|generic_pll1. The reset port on the PLL should be connected. If the PLL loses lock for any reason, you might need to manually reset the PLL in order to re-establish lock to the reference clock. File: C:/Users/847034/Desktop/SD/trex/db/altpll_80u.tdf Line: 34
+    Info: Must be connected
+Info (21057): Implemented 543 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 6 output pins
+    Info (21061): Implemented 533 logic cells
+    Info (21065): Implemented 1 PLLs
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 66 warnings
+    Info: Peak virtual memory: 5005 megabytes
+    Info: Processing ended: Tue Dec 16 15:08:59 2025
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:18
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/847034/Desktop/SD/trex/output_files/dinossauroRawr.map.smsg.
+
+

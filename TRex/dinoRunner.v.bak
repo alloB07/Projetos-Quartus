@@ -1,0 +1,9 @@
+module dinoRunner (
+	input key,
+	
+	output posicao
+);
+
+
+
+endmodule
